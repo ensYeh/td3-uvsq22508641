@@ -64,6 +64,22 @@ public class Dns {
         return result;
     }
 
+    public void addItem(final AdresseIP ip, final NomMachine nom) throws IOException {
+        Objects.requireNonNull(ip);
+        Objects.requireNonNull(nom);
+        if (byIp.containsKey(ip.asString())) {
+            throw new IllegalArgumentException("L'adresse IP existe deja");
+        }
+        if (byName.containsKey(nom.asString().toLowerCase())) {
+            throw new IllegalArgumentException("Le nom de machine existe deja");
+        }
+        DnsItem item = new DnsItem(nom, ip);
+        byIp.put(ip.asString(), item);
+        byName.put(nom.asString().toLowerCase(), item);
+        persist();
+    }
+
+
 
 
 }
