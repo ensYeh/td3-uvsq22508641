@@ -49,5 +49,10 @@ public class Dns {
         return byIp.get(ip.asString());
     }
 
+    public DnsItem getItem(final NomMachine nom) {
+        Objects.requireNonNull(nom);
+        return byName.get(nom.asString().toLowerCase());
+    }
+
 
 }
