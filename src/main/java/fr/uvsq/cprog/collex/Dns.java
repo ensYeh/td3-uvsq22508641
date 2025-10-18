@@ -54,5 +54,16 @@ public class Dns {
         return byName.get(nom.asString().toLowerCase());
     }
 
+    public List<DnsItem> getItems(final String domaine) {
+        if (domaine == null) {
+            return Collections.emptyList();
+        }
+        List<DnsItem> result = byName.values().stream()
+                .filter(i -> i.getNom().getDomaine().equalsIgnoreCase(domaine))
+                .collect(Collectors.toList());
+        return result;
+    }
+
+
 
 }
