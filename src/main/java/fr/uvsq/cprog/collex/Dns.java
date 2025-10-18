@@ -44,4 +44,10 @@ public class Dns {
         }
     }
 
+    public DnsItem getItem(final AdresseIP ip) {
+        Objects.requireNonNull(ip);
+        return byIp.get(ip.asString());
+    }
+
+
 }
