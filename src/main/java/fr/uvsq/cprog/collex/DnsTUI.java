@@ -1,4 +1,11 @@
 package fr.uvsq.cprog.collex;
+package fr.uvsq.cprog.collex.AjoutItem;
+package fr.uvsq.cprog.collex.RechIP;
+package fr.uvsq.cprog.collex.RechNom;
+package fr.uvsq.cprog.collex.RechMachines;
+package fr.uvsq.cprog.collex.QuittApp;
+
+import java.util.Scanner;
 
 public class DnsTUI {
     private final Dns dns;
@@ -13,18 +20,18 @@ public class DnsTUI {
         System.out.print("> ");
         String line = scanner.nextLine();
         if (line == null) {
-            return new QuitCommande();
+            return new QuittApp();
         }
         line = line.trim();
         if (line.equalsIgnoreCase("quit") || line.equalsIgnoreCase("exit")) {
-            return new QuitCommande();
+            return new QuittApp();
         }
         if (line.startsWith("add ")) {
             String[] parts = line.substring(4).trim().split("\\s+");
             if (parts.length != 2) {
                 return () -> "ERREUR : syntaxe add ip nom.qualifie";
             }
-            return new AddCommande(dns, parts[0], parts[1]);
+            return new AjoutItem(dns, parts[0], parts[1]);
         }
         if (line.startsWith("ls")) {
             String rest = line.substring(2).trim();
@@ -36,12 +43,12 @@ public class DnsTUI {
             if (rest.isEmpty()) {
                 return () -> "";
             }
-            return new LsCommande(dns, rest, byIp);
+            return new RechMachines(dns, rest, byIp);
         }
         if (line.matches("[0-9.]+")) {
-            return new FindByIpCommande(dns, line);
+            return new RechIP(dns, line);
         }
-        return new FindByNameCommande(dns, line);
+        return new RechNom(dns, line);
     }
 
     public void affiche(final String s) {
