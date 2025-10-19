@@ -1,8 +1,8 @@
-package fr.uvsq.cprog.collex;
-package fr.uvsq.cprog.collex.Commande;
-package fr.uvsq.cprog.collex.Dns;
-package fr.uvsq.cprog.collex.DnsItem;
-package fr.uvsq.cprog.collex.NomMachine;
+package fr.uvsq.cprog.collex.commands;
+import fr.uvsq.cprog.collex.Commande;
+import fr.uvsq.cprog.collex.Dns;
+import fr.uvsq.cprog.collex.DnsItem;
+import fr.uvsq.cprog.collex.NomMachine;
 
 public class RechNom implements Commande {
     private final Dns dns;

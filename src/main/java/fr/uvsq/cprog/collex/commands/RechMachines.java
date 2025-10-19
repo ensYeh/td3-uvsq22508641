@@ -1,7 +1,7 @@
-package fr.uvsq.cprog.collex;
-package fr.uvsq.cprog.collex.Commande;
-package fr.uvsq.cprog.collex.Dns;
-package fr.uvsq.cprog.collex.DnsItem;
+package fr.uvsq.cprog.collex.commands;
+import fr.uvsq.cprog.collex.Commande;
+import fr.uvsq.cprog.collex.Dns;
+import fr.uvsq.cprog.collex.DnsItem;
 
 import java.util.Collections;
 import java.util.Comparator;

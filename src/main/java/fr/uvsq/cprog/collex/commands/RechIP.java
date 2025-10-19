@@ -1,8 +1,8 @@
-package fr.uvsq.cprog.collex;
-package fr.uvsq.cprog.collex.Commande;
-package fr.uvsq.cprog.collex.Dns;
-package fr.uvsq.cprog.collex.DnsItem;
-package fr.uvsq.cprog.collex.AdresseIP;
+package fr.uvsq.cprog.collex.commands;
+import fr.uvsq.cprog.collex.Commande;
+import fr.uvsq.cprog.collex.Dns;
+import fr.uvsq.cprog.collex.DnsItem;
+import fr.uvsq.cprog.collex.AdresseIP;
 
 public class RechIP implements Commande {
     private final Dns dns;

@@ -1,5 +1,5 @@
-package fr.uvsq.cprog.collex;
-package fr.uvsq.cprog.collex.Commande;
+package fr.uvsq.cprog.collex.commands;
+import fr.uvsq.cprog.collex.Commande;
 
 public class QuittApp implements Commande {
     @Override
